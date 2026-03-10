@@ -4,13 +4,15 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Lei da Sustentabilidade Sonora</title>
+<title>Sustentabilidade Sonora</title>
 
 <link rel="stylesheet" href="css/style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -18,9 +20,9 @@
 
 <header class="navbar">
 
-<div class="nav-container">
+<div class="nav">
 
-<h2 class="logo">Sustentabilidade Sonora</h2>
+<h2>Lei da Sustentabilidade Sonora</h2>
 
 <nav>
 
@@ -38,51 +40,67 @@
 
 <section class="hero">
 
-<div class="hero-content">
-
 <h1>Reduzir o Ruído Industrial</h1>
 
 <p>
-Uma proposta legislativa para tornar a indústria mais sustentável,
-proteger trabalhadores e melhorar a qualidade de vida.
+
+Uma proposta legislativa para melhorar a saúde pública, reduzir poluição sonora
+e tornar a indústria mais sustentável.
+
 </p>
 
-<a class="btn-primary" href="peticao.html">Apoiar a Petição</a>
+<a href="peticao.html" class="btn">Apoiar a Petição</a>
+
+</section>
+
+
+<section class="facts reveal">
+
+<h2>Factos sobre Poluição Sonora</h2>
+
+<div class="fact-grid">
+
+<div class="fact card">
+
+<h3>110M+</h3>
+
+<p>Europeus expostos a níveis perigosos de ruído.</p>
+
+</div>
+
+<div class="fact card">
+
+<h3>46%</h3>
+
+<p>Trabalhadores industriais expostos a ruído perigoso.</p>
+
+</div>
+
+<div class="fact card">
+
+<h3>18%</h3>
+
+<p>Trabalhadores industriais com dificuldades auditivas.</p>
+
+</div>
 
 </div>
 
 </section>
 
 
-<section class="features">
+<section class="graphs reveal">
 
-<h2>Objetivos da Lei</h2>
+<h2>Impacto da Poluição Sonora</h2>
 
-<div class="feature-grid">
-
-<div class="feature card">
-<h3>Redução de Ruído</h3>
-<p>Limites mais rigorosos para poluição sonora industrial.</p>
-</div>
-
-<div class="feature card">
-<h3>Proteção dos Trabalhadores</h3>
-<p>Ambientes de trabalho mais saudáveis.</p>
-</div>
-
-<div class="feature card">
-<h3>Inovação Industrial</h3>
-<p>Incentivos a tecnologias mais silenciosas.</p>
-</div>
-
-</div>
+<canvas id="noiseChart"></canvas>
 
 </section>
 
 
 <footer>
 
-<p>Projeto A+ • Colégio Novo da Maia • Grupo 9</p>
+<p>Projeto A+ • Colégio Novo da Maia</p>
 
 </footer>
 
