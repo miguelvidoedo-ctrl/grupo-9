@@ -1,76 +1,25 @@
-// SCROLL ANIMATION
+new Chart(document.getElementById("grafico1"),{
 
-function reveal(){
+type:"bar",
 
-let reveals = document.querySelectorAll(".reveal")
-
-for(let i=0;i<reveals.length;i++){
-
-let windowHeight = window.innerHeight
-let elementTop = reveals[i].getBoundingClientRect().top
-let elementVisible = 100
-
-if(elementTop < windowHeight - elementVisible){
-
-reveals[i].classList.add("active")
-
-}
-
-}
-
-}
-
-window.addEventListener("scroll", reveal)
-
-
-// CHART
-
-const ctx = document.getElementById('noiseChart')
-
-if(ctx){
-
-new Chart(ctx, {
-
-type: 'bar',
-
-data: {
-
-labels: [
-'Expostos a ruído na Europa',
-'Trabalhadores industriais expostos',
-'Trabalhadores com perda auditiva'
-],
-
-datasets: [{
-
-label: 'Percentagem',
-
-data: [20,46,18],
-
-borderWidth:1
-
+data:{
+labels:["Europa","Indústria","Perda auditiva"],
+datasets:[{
+data:[110,46,18]
 }]
-
-},
-
-options: {
-
-responsive:true,
-
-plugins:{
-
-legend:{display:false}
-
-},
-
-scales:{
-
-y:{beginAtZero:true}
-
-}
-
 }
 
 })
 
+new Chart(document.getElementById("grafico2"),{
+
+type:"pie",
+
+data:{
+labels:["Tráfego","Indústria","Construção","Outros"],
+datasets:[{
+data:[40,25,20,15]
+}]
 }
+
+})
