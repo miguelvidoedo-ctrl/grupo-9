@@ -2,7 +2,7 @@ body{
 
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f6f8fb;
+background:#f7f9fc;
 
 }
 
@@ -12,13 +12,13 @@ background:#f6f8fb;
 
 position:sticky;
 top:0;
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(12px);
 border-bottom:1px solid #eee;
 
 }
 
-.nav-container{
+.nav{
 
 display:flex;
 justify-content:space-between;
@@ -38,66 +38,78 @@ font-weight:500;
 
 }
 
+
 /* HERO */
 
 .hero{
 
 height:80vh;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
+align-items:center;
 text-align:center;
-background:linear-gradient(120deg,#2c7a4b,#4fd17b);
+
+background:linear-gradient(120deg,#2c7a4b,#49c878);
+
 color:white;
 
 }
 
 .hero h1{
 
-font-size:50px;
+font-size:55px;
 
 }
 
-/* BOTÃO */
+.hero p{
 
-.btn-primary{
+max-width:600px;
 
-display:inline-block;
-margin-top:20px;
-padding:15px 30px;
+}
+
+
+/* BUTTON */
+
+.btn{
+
 background:white;
 color:#2c7a4b;
+padding:15px 30px;
 border-radius:30px;
+margin-top:20px;
 text-decoration:none;
 font-weight:600;
 transition:0.3s;
 
 }
 
-.btn-primary:hover{
+.btn:hover{
 
-transform:scale(1.05);
+transform:scale(1.1);
 
 }
 
-/* FEATURES */
 
-.features{
+/* FACTS */
+
+.facts{
 
 padding:80px 20px;
 text-align:center;
 
 }
 
-.feature-grid{
+.fact-grid{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:30px;
-max-width:1000px;
+max-width:900px;
 margin:auto;
 
 }
+
 
 /* CARDS */
 
@@ -106,46 +118,53 @@ margin:auto;
 background:white;
 padding:30px;
 border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-transition:0.3s;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+transition:0.4s;
 
 }
 
 .card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-10px) scale(1.03);
 
 }
 
-.content{
 
-max-width:900px;
-margin:auto;
+/* GRAPHS */
+
+.graphs{
+
 padding:80px 20px;
-
-}
-
-.center{
-
+max-width:800px;
+margin:auto;
 text-align:center;
 
 }
 
-/* CONTADOR */
 
-.counter{
+/* ANIMATION */
 
-font-size:60px;
-font-weight:bold;
-margin:20px;
+.reveal{
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+transform:translateY(0);
 
 }
 
 footer{
 
-text-align:center;
+margin-top:80px;
 padding:30px;
 background:#111;
 color:white;
+text-align:center;
 
 }
