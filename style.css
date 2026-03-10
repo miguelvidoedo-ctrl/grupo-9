@@ -1,170 +1,54 @@
 body{
-
 margin:0;
-font-family:'Inter',sans-serif;
-background:#f7f9fc;
-
+font-family:Arial;
+background:#f5f7fa;
 }
-
-/* NAVBAR */
 
 .navbar{
-
-position:sticky;
-top:0;
-background:rgba(255,255,255,0.85);
-backdrop-filter:blur(12px);
-border-bottom:1px solid #eee;
-
-}
-
-.nav{
-
+background:#2c7a4b;
+color:white;
+padding:20px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-max-width:1100px;
-margin:auto;
-padding:15px;
-
 }
 
 nav a{
-
+color:white;
 margin-left:20px;
 text-decoration:none;
-color:#333;
-font-weight:500;
-
 }
-
-
-/* HERO */
 
 .hero{
-
-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+padding:150px 20px;
 text-align:center;
-
 background:linear-gradient(120deg,#2c7a4b,#49c878);
-
 color:white;
-
 }
 
-.hero h1{
-
-font-size:55px;
-
-}
-
-.hero p{
-
-max-width:600px;
-
-}
-
-
-/* BUTTON */
-
-.btn{
-
-background:white;
-color:#2c7a4b;
-padding:15px 30px;
-border-radius:30px;
-margin-top:20px;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-
-}
-
-.btn:hover{
-
-transform:scale(1.1);
-
-}
-
-
-/* FACTS */
-
-.facts{
-
+.section{
 padding:80px 20px;
-text-align:center;
-
+max-width:1000px;
+margin:auto;
 }
 
-.fact-grid{
-
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:30px;
-max-width:900px;
-margin:auto;
-
 }
-
-
-/* CARDS */
 
 .card{
-
 background:white;
 padding:30px;
-border-radius:15px;
-box-shadow:0 15px 40px rgba(0,0,0,0.1);
-transition:0.4s;
-
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
 }
 
-.card:hover{
-
-transform:translateY(-10px) scale(1.03);
-
-}
-
-
-/* GRAPHS */
-
-.graphs{
-
-padding:80px 20px;
-max-width:800px;
-margin:auto;
-text-align:center;
-
-}
-
-
-/* ANIMATION */
-
-.reveal{
-
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-
-}
-
-.reveal.active{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-footer{
-
-margin-top:80px;
-padding:30px;
-background:#111;
-color:white;
-text-align:center;
-
+.btn{
+background:white;
+color:#2c7a4b;
+padding:15px 25px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
 }
