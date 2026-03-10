@@ -1,90 +1,177 @@
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f4f6f7;
-    color:#333;
+
+margin:0;
+font-family:'Poppins', sans-serif;
+background:#f4f7f9;
+color:#333;
+
 }
 
-/* header */
+
+.container{
+
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+
+}
+
 
 header{
-    background:#2c7a4b;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
+
+background:linear-gradient(135deg,#2c7a4b,#1f5d39);
+color:white;
+text-align:center;
+padding:50px 20px;
+
 }
 
-header h1{
-    margin:0;
-    font-size:40px;
-}
-
-/* menu */
 
 nav{
-    background:#1f5d39;
-    text-align:center;
-    padding:10px;
+
+margin-top:20px;
+
 }
+
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:500;
+
 }
 
-nav a:hover{
-    text-decoration:underline;
+
+.hero{
+
+background:white;
+text-align:center;
+padding:80px 20px;
+
 }
 
-/* secções */
 
-section{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
+.hero h2{
+
+font-size:36px;
+
 }
 
-h2{
-    color:#2c7a4b;
+
+.cta{
+
+display:inline-block;
+margin-top:20px;
+padding:15px 30px;
+background:#2c7a4b;
+color:white;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+
 }
 
-/* video */
 
-.video-container{
-    position:relative;
-    padding-bottom:56.25%;
-    height:0;
+.cta:hover{
+
+transform:scale(1.05);
+
 }
 
-.video-container iframe{
-    position:absolute;
-    width:100%;
-    height:100%;
+
+.cards-section{
+
+background:#eef3f6;
+text-align:center;
+padding:60px 20px;
+
 }
 
-/* botão */
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+
+}
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+.peticao{
+
+text-align:center;
+padding:70px 20px;
+
+}
+
+
+.contador{
+
+font-size:40px;
+font-weight:bold;
+margin:20px 0;
+
+}
+
 
 .botao{
-    display:inline-block;
-    padding:15px 25px;
-    background:#2c7a4b;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    margin-top:20px;
+
+display:inline-block;
+padding:15px 30px;
+background:#2c7a4b;
+color:white;
+border-radius:30px;
+text-decoration:none;
+
 }
 
-.botao:hover{
-    background:#1f5d39;
-}
-
-/* footer */
 
 footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:20px;
+
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+
+}
+
+
+/* animação scroll */
+
+.fade{
+
+opacity:0;
+transform:translateY(20px);
+transition:1s;
+
+}
+
+
+.fade.visible{
+
+opacity:1;
+transform:translateY(0);
+
 }
