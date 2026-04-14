@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Jogos</title>
 
 <link rel="stylesheet" href="style.css">
@@ -21,55 +23,25 @@
 <a href="peticao.html">Petição</a>
 <a href="jogos.html">Jogos</a>
 </nav>
-
 </header>
 
 <section class="section center">
-<h1>Jogos Interativos</h1>
+<h1>Jogos</h1>
 </section>
 
-<!-- QUIZ -->
+<!-- REFLEXOS -->
 <section class="section">
-
-<h2>Quiz</h2>
-
-<div class="card">
-
-<p>O que causa poluição sonora?</p>
-
-<button onclick="resposta(1)">Máquinas</button>
-<button onclick="resposta(0)">Árvores</button>
-
-<p id="resultado"></p>
-
-</div>
-
-</section>
-
-<!-- SLIDER -->
-<section class="section">
-
-<h2>Simulador de Ruído</h2>
-
-<input type="range" min="0" max="120" value="30" id="slider">
-
-<p id="nivel">30 dB</p>
-
-<div class="barra">
-<div id="barraNivel"></div>
-</div>
-
+<h2>Reflexos</h2>
+<button id="start">Começar</button>
+<div id="box"></div>
+<p id="tempo"></p>
 </section>
 
 <!-- CLICK GAME -->
 <section class="section">
-
-<h2>Reduz o Ruído</h2>
-
-<p id="ruido">100</p>
-
-<button onclick="reduzir()">Reduzir</button>
-
+<h2>Clique Rápido</h2>
+<button onclick="startClickGame()">Começar</button>
+<p id="score">0</p>
 </section>
 
 <script src="script.js"></script>
