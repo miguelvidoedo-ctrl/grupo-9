@@ -1,80 +1,96 @@
-// FUNÇÃO SEGURA PARA GRÁFICOS
+window.onload = function(){
 
-function criarGrafico(id, config){
-  const el = document.getElementById(id)
-  if(el){
-    new Chart(el, config)
-  }
+// INDEX
+let g = document.getElementById("graficoIndex")
+if(g){
+new Chart(g,{
+type:"bar",
+data:{
+labels:["Europa","Indústria","Perda"],
+datasets:[{data:[110,46,18]}]
+}
+})
 }
 
-// GRÁFICOS
-
-criarGrafico("graficoSaude", {
-  type: "bar",
-  data: {
-    labels: ["Stress","Sono","Audição"],
-    datasets: [{ data: [70,60,40] }]
-  }
+// IMPACTO
+let s = document.getElementById("graficoSaude")
+if(s){
+new Chart(s,{
+type:"bar",
+data:{
+labels:["Stress","Sono","Audição"],
+datasets:[{data:[70,60,40]}]
+}
 })
-
-criarGrafico("graficoAmbiente", {
-  type: "pie",
-  data: {
-    labels: ["Aves","Animais","Outros"],
-    datasets: [{ data: [50,30,20] }]
-  }
-})
-
-criarGrafico("graficoEconomia", {
-  type: "line",
-  data: {
-    labels: ["Ano1","Ano2","Ano3","Ano4"],
-    datasets: [{ data: [10,30,60,100] }]
-  }
-})
-
-criarGrafico("graficoComparacao", {
-  type: "bar",
-  data: {
-    labels: ["Antes","Depois"],
-    datasets: [{ data: [80,50] }]
-  }
-})
-
-// QUIZ
-
-function resposta(correta){
-  const r = document.getElementById("resultado")
-  if(!r) return
-  r.innerText = correta ? "✅ Correto" : "❌ Errado"
 }
 
-// SLIDER
-
-const slider = document.getElementById("slider")
-
-if(slider){
-  slider.addEventListener("input", function(){
-    const v = slider.value
-    document.getElementById("nivel").innerText = v + " dB"
-    document.getElementById("barraNivel").style.width = v + "%"
-  })
+let a = document.getElementById("graficoAmbiente")
+if(a){
+new Chart(a,{
+type:"pie",
+data:{
+labels:["Aves","Animais","Outros"],
+datasets:[{data:[50,30,20]}]
+}
+})
 }
 
-// JOGO
+let e = document.getElementById("graficoEconomia")
+if(e){
+new Chart(e,{
+type:"line",
+data:{
+labels:["Ano1","Ano2","Ano3","Ano4"],
+datasets:[{data:[10,30,60,100]}]
+}
+})
+}
 
-let ruido = 100
+}
 
-function reduzir(){
-  const el = document.getElementById("ruido")
-  if(!el) return
+// JOGO REFLEXOS
 
-  if(ruido > 0){
-    ruido -= 10
-    el.innerText = ruido
-  }
+let startTime
+const box = document.getElementById("box")
+const startBtn = document.getElementById("start")
 
-  if(ruido <= 0){
-    alert("🎉 Conseguiste!")
-  }
+if(startBtn){
+startBtn.onclick = function(){
+
+box.style.display = "block"
+box.style.background = "red"
+
+setTimeout(()=>{
+box.style.background = "green"
+startTime = new Date().getTime()
+},Math.random()*2000+1000)
+
+}
+
+box.onclick = function(){
+
+let tempo = new Date().getTime() - startTime
+document.getElementById("tempo").innerText = tempo + " ms"
+box.style.display="none"
+
+}
+}
+
+// CLICK GAME
+
+function startClickGame(){
+
+let pontos=0
+let score=document.getElementById("score")
+
+let i=setInterval(()=>{
+pontos++
+score.innerText=pontos
+},200)
+
+setTimeout(()=>{
+clearInterval(i)
+alert("Pontuação: "+pontos)
+},10000)
+
 }
