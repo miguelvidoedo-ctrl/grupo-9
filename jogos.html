@@ -1,50 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Jogos</title>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-<header class="navbar">
-<h2>Lei da Sustentabilidade Sonora</h2>
-
-<nav>
-<a href="index.html">Início</a>
-<a href="lei.html">Lei</a>
-<a href="impacto.html">Impacto</a>
-<a href="peticao.html">Petição</a>
-<a href="jogos.html">Jogos</a>
-</nav>
-</header>
-
 <section class="section center">
-<h1>Jogos</h1>
+
+<h2>Mini Jogo: Reduz o Ruído</h2>
+
+<p>Nível de ruído atual:</p>
+
+<h1 id="nivelRuido">100</h1>
+
+<button onclick="reduzirRuido()" class="btn">
+Reduzir Ruído
+</button>
+
 </section>
-
-<!-- REFLEXOS -->
-<section class="section">
-<h2>Reflexos</h2>
-<button id="start">Começar</button>
-<div id="box"></div>
-<p id="tempo"></p>
-</section>
-
-<!-- CLICK GAME -->
-<section class="section">
-<h2>Clique Rápido</h2>
-<button onclick="startClickGame()">Começar</button>
-<p id="score">0</p>
-</section>
-
-<script src="script.js"></script>
-
-</body>
-</html>
