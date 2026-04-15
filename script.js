@@ -1,96 +1,59 @@
-window.onload = function(){
+// GRÁFICOS
 
-// INDEX
-let g = document.getElementById("graficoIndex")
-if(g){
-new Chart(g,{
-type:"bar",
+function criarGrafico(id, tipo, labels, dados){
+
+let canvas = document.getElementById(id)
+
+if(canvas){
+
+new Chart(canvas,{
+type: tipo,
 data:{
-labels:["Europa","Indústria","Perda"],
-datasets:[{data:[110,46,18]}]
+labels: labels,
+datasets:[{data: dados}]
+},
+options:{
+responsive:true,
+plugins:{legend:{display:false}}
 }
 })
-}
 
-// IMPACTO
-let s = document.getElementById("graficoSaude")
-if(s){
-new Chart(s,{
-type:"bar",
-data:{
-labels:["Stress","Sono","Audição"],
-datasets:[{data:[70,60,40]}]
-}
-})
-}
-
-let a = document.getElementById("graficoAmbiente")
-if(a){
-new Chart(a,{
-type:"pie",
-data:{
-labels:["Aves","Animais","Outros"],
-datasets:[{data:[50,30,20]}]
-}
-})
-}
-
-let e = document.getElementById("graficoEconomia")
-if(e){
-new Chart(e,{
-type:"line",
-data:{
-labels:["Ano1","Ano2","Ano3","Ano4"],
-datasets:[{data:[10,30,60,100]}]
-}
-})
 }
 
 }
 
-// JOGO REFLEXOS
+// gráficos
 
-let startTime
-const box = document.getElementById("box")
-const startBtn = document.getElementById("start")
+criarGrafico("grafico1","bar",
+["Europa","Indústria","Cidades"],
+[20,46,30]
+)
 
-if(startBtn){
-startBtn.onclick = function(){
+criarGrafico("grafico2","pie",
+["Tráfego","Indústria","Construção","Outros"],
+[40,25,20,15]
+)
 
-box.style.display = "block"
-box.style.background = "red"
+criarGrafico("grafico3","line",
+["Stress","Insónia","Perda auditiva"],
+[60,45,18]
+)
 
-setTimeout(()=>{
-box.style.background = "green"
-startTime = new Date().getTime()
-},Math.random()*2000+1000)
 
+// 🎮 MINI JOGO (reduzir ruído)
+
+let ruido = 100
+
+function reduzirRuido(){
+
+ruido -= 10
+
+if(ruido < 0) ruido = 0
+
+document.getElementById("nivelRuido").innerText = ruido
+
+if(ruido === 0){
+alert("Conseguiste eliminar o ruído!")
 }
-
-box.onclick = function(){
-
-let tempo = new Date().getTime() - startTime
-document.getElementById("tempo").innerText = tempo + " ms"
-box.style.display="none"
-
-}
-}
-
-// CLICK GAME
-
-function startClickGame(){
-
-let pontos=0
-let score=document.getElementById("score")
-
-let i=setInterval(()=>{
-pontos++
-score.innerText=pontos
-},200)
-
-setTimeout(()=>{
-clearInterval(i)
-alert("Pontuação: "+pontos)
-},10000)
 
 }
