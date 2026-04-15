@@ -1,20 +1,16 @@
 // GRÁFICOS
 
-function criarGrafico(id, tipo, labels, dados){
+function grafico(id,data){
 
-let canvas = document.getElementById(id)
+let c = document.getElementById(id)
 
-if(canvas){
+if(c){
 
-new Chart(canvas,{
-type: tipo,
+new Chart(c,{
+type:"bar",
 data:{
-labels: labels,
-datasets:[{data: dados}]
-},
-options:{
-responsive:true,
-plugins:{legend:{display:false}}
+labels:["Ruído","Indústria","Saúde"],
+datasets:[{data:data}]
 }
 })
 
@@ -22,38 +18,28 @@ plugins:{legend:{display:false}}
 
 }
 
-// gráficos
+grafico("g1",[110,46,18])
+grafico("g2",[40,25,20])
 
-criarGrafico("grafico1","bar",
-["Europa","Indústria","Cidades"],
-[20,46,30]
-)
+// JOGO
 
-criarGrafico("grafico2","pie",
-["Tráfego","Indústria","Construção","Outros"],
-[40,25,20,15]
-)
+let ruido = 50
 
-criarGrafico("grafico3","line",
-["Stress","Insónia","Perda auditiva"],
-[60,45,18]
-)
+function aumentar(){
+ruido += Math.floor(Math.random()*10)
 
+if(ruido > 85){
+alert("Perdeste")
+ruido = 50
+}
 
-// 🎮 MINI JOGO (reduzir ruído)
+document.getElementById("ruido").innerText = ruido
+}
 
-let ruido = 100
-
-function reduzirRuido(){
-
-ruido -= 10
+function reduzir(){
+ruido -= Math.floor(Math.random()*10)
 
 if(ruido < 0) ruido = 0
 
-document.getElementById("nivelRuido").innerText = ruido
-
-if(ruido === 0){
-alert("Conseguiste eliminar o ruído!")
-}
-
+document.getElementById("ruido").innerText = ruido
 }
