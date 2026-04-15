@@ -1,13 +1,44 @@
-<section class="section center">
+<!DOCTYPE html>
+<html lang="pt">
+<head>
 
-<h2>Mini Jogo: Reduz o Ruído</h2>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<p>Nível de ruído atual:</p>
+<title>Jogos</title>
 
-<h1 id="nivelRuido">100</h1>
+<link rel="stylesheet" href="style.css">
 
-<button onclick="reduzirRuido()" class="btn">
-Reduzir Ruído
-</button>
+</head>
+
+<body>
+
+<header class="navbar">
+
+<h2>Jogos</h2>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="lei.html">Lei</a>
+<a href="impacto.html">Impacto</a>
+<a href="peticao.html">Petição</a>
+<a href="jogos.html">Jogos</a>
+</nav>
+
+</header>
+
+<section class="section">
+
+<h2>Simulador de Ruído</h2>
+
+<h1 id="ruido">50</h1>
+
+<button onclick="aumentar()">Máquina</button>
+<button onclick="reduzir()">Isolamento</button>
 
 </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
