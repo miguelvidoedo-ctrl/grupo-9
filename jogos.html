@@ -15,7 +15,7 @@
 
 <header class="navbar">
 
-<h2>Jogos</h2>
+<h2>Jogos Interativos</h2>
 
 <nav>
 <a href="index.html">Início</a>
@@ -27,18 +27,154 @@
 
 </header>
 
+<!-- 🎮 JOGO 1 -->
 <section class="section">
 
-<h2>Simulador de Ruído</h2>
+<h2>Gestão de Fábrica</h2>
 
 <h1 id="ruido">50</h1>
+<h2 id="nivel">Nível 1</h2>
 
-<button onclick="aumentar()">Máquina</button>
-<button onclick="reduzir()">Isolamento</button>
+<button onclick="maquina()">Produzir</button>
+<button onclick="isolamento()">Isolamento</button>
 
 </section>
 
-<script src="script.js"></script>
+<!-- 🎮 JOGO 2 -->
+<section class="section">
+
+<h2>Decisões</h2>
+
+<p id="situacao"></p>
+
+<button onclick="decidir(0)">Opção A</button>
+<button onclick="decidir(1)">Opção B</button>
+
+<p id="resultado"></p>
+
+</section>
+
+<!-- 🎮 JOGO 3 MEMÓRIA -->
+<section class="section">
+
+<h2>Memória</h2>
+
+<div id="memoria"></div>
+
+</section>
+
+<!-- 🎮 JOGO 4 SOPA -->
+<section class="section">
+
+<h2>Sopa de Letras</h2>
+
+<div id="grid"></div>
+
+</section>
+
+<script>
+
+// JOGO 1
+let ruido = 50
+let nivel = 1
+
+function atualizar(){
+document.getElementById("ruido").innerText = ruido
+document.getElementById("nivel").innerText = "Nível " + nivel
+}
+
+function maquina(){
+ruido += Math.floor(Math.random()*10)+nivel
+nivel++
+if(ruido>85){
+alert("Perdeste")
+ruido=50
+nivel=1
+}
+atualizar()
+}
+
+function isolamento(){
+ruido -= Math.floor(Math.random()*15)
+if(ruido<0) ruido=0
+atualizar()
+}
+
+// JOGO 2
+let cenarios=[
+{q:"Aumentar produção?",c:1},
+{q:"Investir em segurança?",c:0}
+]
+
+let atualC=0
+
+function mostrar(){
+document.getElementById("situacao").innerText=cenarios[atualC].q
+}
+
+function decidir(i){
+if(i===cenarios[atualC].c){
+document.getElementById("resultado").innerText="Boa decisão"
+}else{
+document.getElementById("resultado").innerText="Má decisão"
+}
+atualC++
+if(atualC<cenarios.length) mostrar()
+}
+
+mostrar()
+
+// MEMÓRIA
+let mem=document.getElementById("memoria")
+
+if(mem){
+let cartas=["A","A","B","B","C","C","D","D"]
+cartas.sort(()=>0.5-Math.random())
+
+let sel=[]
+
+cartas.forEach(l=>{
+let d=document.createElement("div")
+d.className="carta"
+d.innerText="?"
+
+d.onclick=function(){
+d.innerText=l
+sel.push({d,l})
+
+if(sel.length==2){
+if(sel[0].l!==sel[1].l){
+setTimeout(()=>{
+sel[0].d.innerText="?"
+sel[1].d.innerText="?"
+},500)
+}
+sel=[]
+}
+}
+
+mem.appendChild(d)
+})
+}
+
+// SOPA
+let grid=document.getElementById("grid")
+
+if(grid){
+let letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+for(let i=0;i<10;i++){
+let linha=document.createElement("div")
+for(let j=0;j<10;j++){
+let s=document.createElement("span")
+s.innerText=letras[Math.floor(Math.random()*26)]
+s.className="letra"
+linha.appendChild(s)
+}
+grid.appendChild(linha)
+}
+}
+
+</script>
 
 </body>
 </html>
