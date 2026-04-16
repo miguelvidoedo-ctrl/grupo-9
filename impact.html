@@ -9,6 +9,7 @@
 
 <link rel="stylesheet" href="style.css">
 
+<!-- Chart.js já incluído -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
@@ -31,14 +32,73 @@
 
 <section class="section">
 
-<h1>Impacto</h1>
+<h1>Impacto da Poluição Sonora</h1>
 
-<canvas id="g1"></canvas>
-<canvas id="g2"></canvas>
+<p>
+A poluição sonora afeta milhões de pessoas e pode causar stress,
+problemas de sono e perda auditiva.
+</p>
 
 </section>
 
-<script src="script.js"></script>
+<section class="section">
+<h2>População afetada</h2>
+<canvas id="g1"></canvas>
+</section>
+
+<section class="section">
+<h2>Fontes de ruído</h2>
+<canvas id="g2"></canvas>
+</section>
+
+<section class="section">
+<h2>Impacto na saúde</h2>
+<canvas id="g3"></canvas>
+</section>
+
+<!-- SCRIPT JÁ INCLUÍDO -->
+<script>
+
+window.onload = function(){
+
+function criar(id,tipo,labels,dados){
+
+let c = document.getElementById(id)
+
+if(!c) return
+
+new Chart(c,{
+type:tipo,
+data:{
+labels:labels,
+datasets:[{
+data:dados,
+backgroundColor:["#2c7a4b","#49c878","#a3e4c2","#1f5d39"]
+}]
+},
+options:{responsive:true}
+})
+
+}
+
+criar("g1","bar",
+["Europa","Indústria","Cidades"],
+[110,46,30]
+)
+
+criar("g2","pie",
+["Tráfego","Indústria","Construção","Outros"],
+[40,25,20,15]
+)
+
+criar("g3","line",
+["Stress","Sono","Audição"],
+[60,45,18]
+)
+
+}
+
+</script>
 
 </body>
 </html>
