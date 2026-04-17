@@ -1,8 +1,21 @@
-body{
+/* RESET */
+
+*{
 margin:0;
-font-family:Arial;
-background:#f5f7fa;
+padding:0;
+box-sizing:border-box;
 }
+
+/* BODY */
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f7;
+color:#333;
+line-height:1.6;
+}
+
+/* NAVBAR */
 
 .navbar{
 background:#2c7a4b;
@@ -10,49 +23,202 @@ color:white;
 padding:20px;
 display:flex;
 justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
 }
 
 nav a{
 color:white;
 margin-left:15px;
 text-decoration:none;
+font-weight:bold;
 }
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* HERO */
+
+.hero{
+padding:120px 20px;
+text-align:center;
+background:linear-gradient(135deg,#2c7a4b,#49c878);
+color:white;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+/* SECTIONS */
 
 .section{
-padding:60px;
-max-width:1000px;
+max-width:1100px;
 margin:auto;
+padding:60px 20px;
 }
 
-button{
-padding:10px;
-margin:5px;
-cursor:pointer;
+.center{
+text-align:center;
 }
+
+/* BUTTONS */
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:15px 25px;
+background:#2c7a4b;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1f5d39;
+}
+
+/* CARDS */
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+width:250px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* FOOTER */
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* GRÁFICOS */
+
+canvas{
+max-width:700px;
+margin:40px auto;
+display:block;
+}
+
+/* BOTÕES JOGOS */
+
+button{
+padding:10px 15px;
+margin:5px;
+border:none;
+background:#2c7a4b;
+color:white;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+}
+
+button:hover{
+background:#1f5d39;
+}
+
+/* MEMÓRIA */
 
 #memoria{
 display:grid;
-grid-template-columns:repeat(4,60px);
-gap:10px;
+grid-template-columns:repeat(4,70px);
+gap:15px;
+justify-content:center;
+margin-top:20px;
 }
 
 .carta{
-width:60px;
-height:60px;
+width:70px;
+height:70px;
 background:#2c7a4b;
 color:white;
 display:flex;
 align-items:center;
 justify-content:center;
+font-size:20px;
+cursor:pointer;
+border-radius:8px;
 }
+
+/* SOPA DE LETRAS */
 
 #grid{
 display:grid;
-grid-template-columns:repeat(10,30px);
+grid-template-columns:repeat(10,35px);
 gap:5px;
+justify-content:center;
+margin-top:20px;
 }
 
 .letra{
+width:35px;
+height:35px;
+display:flex;
+align-items:center;
+justify-content:center;
 border:1px solid #ccc;
+background:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* TITLES */
+
+h1{
+font-size:36px;
+margin-bottom:20px;
+}
+
+h2{
+margin-bottom:20px;
+color:#2c7a4b;
+}
+
+h3{
+margin-bottom:10px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:30px;
+}
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+.navbar{
+flex-direction:column;
 text-align:center;
+}
+
+nav{
+margin-top:10px;
+}
+
 }
